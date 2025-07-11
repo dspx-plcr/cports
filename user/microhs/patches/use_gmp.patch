@@ -1,0 +1,18 @@
+diff --git a/Makefile b/Makefile
+index fdfb1fdc95..05ea849bb4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,9 +1,9 @@
+ # Define these 3 lines to use GMP for Integer.
+ # For MacOS with homebrew:
+-#MHSGMPCCFLAGS=-DWANT_GMP=1
+-#MHSGMPCCLIBS= -L/opt/homebrew/lib -lgmp -I/opt/homebrew/include
+-#MHSGMP=-ilib/gmp
+-#MCABALGMP=-fgmp
++MHSGMPCCFLAGS=-DWANT_GMP=1
++MHSGMPCCLIBS= -L/usr/lib -lgmp -I/usr/include
++MHSGMP=-ilib/gmp
++MCABALGMP=-fgmp
+ #
+ # installation prefix
+ PREFIX=/usr/local
