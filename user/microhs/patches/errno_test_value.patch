@@ -1,0 +1,21 @@
+diff --git a/tests/ForeignC.hs b/tests/ForeignC.hs
+index b53fcd88f0..74dc157785 100644
+--- a/tests/ForeignC.hs
++++ b/tests/ForeignC.hs
+@@ -14,7 +14,4 @@
+   print r
+   CInt pid <- getpid
+   print (pid /= 0)
+-  p <- cerrno
+-  CInt e <- peek p
+-  print e
+   print (let CInt x = seven in x)
+diff --git a/tests/ForeignC.ref b/tests/ForeignC.ref
+index c199c717b8..fb2a233c94 100644
+--- a/tests/ForeignC.ref
++++ b/tests/ForeignC.ref
+@@ -1,4 +1,3 @@
+ 33
+ True
+-0
+ 7

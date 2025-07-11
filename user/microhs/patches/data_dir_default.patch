@@ -1,0 +1,13 @@
+diff --git a/paths/Paths_MicroHs.hs b/paths/Paths_MicroHs.hs
+index 05e824b00e..1b03b913d3 100644
+--- a/paths/Paths_MicroHs.hs
++++ b/paths/Paths_MicroHs.hs
+@@ -7,7 +7,7 @@
+ import Data.Version
+ 
+ getDataDir :: IO FilePath
+-getDataDir = return "."
++getDataDir = return "/usr/lib/mhs"
+ 
+ version :: Version
+ version = makeVersion [0,14,4,0]
