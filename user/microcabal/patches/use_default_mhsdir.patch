@@ -1,0 +1,28 @@
+diff --git a/Makefile b/Makefile
+index 4d950f2..753b6c8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,9 +1,6 @@
+-MHSDIR=../MicroHs
+-MHS=$(MHSDIR)/bin/mhs
+-
+ bin/mcabal:	src/MicroCabal/*.hs src/MicroCabal/*/*.hs
+ 	@mkdir -p bin
+-	MHSDIR=$(MHSDIR) $(MHS) -isrc -obin/mcabal MicroCabal.Main
++	mhs -isrc -obin/mcabal MicroCabal.Main
+ 
+ bin/gmcabal:	src/MicroCabal/*.hs src/MicroCabal/*/*.hs
+ 	@mkdir -p bin
+diff --git a/src/MicroCabal/Backend/MHS.hs b/src/MicroCabal/Backend/MHS.hs
+index 8be02ef..8c03c21 100644
+--- a/src/MicroCabal/Backend/MHS.hs
++++ b/src/MicroCabal/Backend/MHS.hs
+@@ -97,7 +97,7 @@ setupStdArgs env flds = do
+       mhsX    = ["CPP"]
+   depvers <- mapM (getPackageVersion env) deps
+   let macros = genPkgVersionMacros (zip deps depvers)
+-  return $ ["-i"] ++
++  return $
+     map ("-i" ++) srcDirs ++
+     ["-i" ++ pathModuleDir env] ++
+     map ("-X" ++) exts' ++

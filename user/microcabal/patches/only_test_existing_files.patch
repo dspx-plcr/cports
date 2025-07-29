@@ -1,0 +1,15 @@
+diff --git a/Makefile b/Makefile
+index 4d950f2..c5cdca9 100644
+--- a/Makefile
++++ b/Makefile
+@@ -17,10 +14,6 @@ clean:
+ 
+ test:	bin/mcabal
+ 	bin/mcabal parse MicroCabal.cabal
+-	bin/mcabal parse ../MicroHs/MicroHs.cabal
+-	bin/mcabal parse ../MicroHs/cpphssrc/malcolm-wallace-universe/polyparse-1.12/polyparse.cabal
+-	bin/mcabal parse ../MicroHs/cpphssrc/malcolm-wallace-universe/cpphs-1.20.9/cpphs.cabal
+-	bin/mcabal parse ../Hackage/optparse-applicative-0.18.1.0/optparse-applicative.cabal
+ 
+ install: bin/mcabal
+ 	@mkdir -p ~/.mcabal/bin
