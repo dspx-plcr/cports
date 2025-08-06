@@ -1,5 +1,5 @@
 pkgname = 'odin'
-pkgver = '2025.06'
+pkgver = '2025.07'
 pkgrel = 0
 hostmakedepends = ['clang', 'cmake', 'gmake', 'linux-headers', 'llvm-devel']
 depends = ['llvm-libs', 'odin-vendor', 'odin-vendor-static']
@@ -8,7 +8,7 @@ license = 'BSD-3-Clause'
 url = 'https://odin-lang.org'
 source = 'https://github.com/odin-lang/Odin/archive/refs/tags/dev-' + \
     pkgver.replace(".", "-") + '.tar.gz'
-sha256 = '75852208a5978f1ee97ac274348607c7798cd75bbc286216cf9a3e615aca6e8f'
+sha256 = 'f0b59fe4aadd1003c632c6b30468730c7a6a0e90578f26f70201c9796a420531'
 
 def build(self):
     self.do(self.chroot_srcdir / 'build_odin.sh', 'release-native')
