@@ -1,0 +1,18 @@
+diff --git a/meson.build b/meson.build
+index 727092a..27a2b59 100644
+--- a/meson.build
++++ b/meson.build
+@@ -8,13 +8,6 @@ i18n = import('i18n')
+ gnome = import('gnome')
+ 
+ version = meson.project_version()
+-
+-meson.add_dist_script(
+-  'build-aux/dist-vendor.sh',
+-  join_paths(meson.project_build_root(), 'meson-dist', meson.project_name() + '-' + version),
+-  meson.project_source_root()
+-)
+-
+ pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
+ 
+ subdir('data')
